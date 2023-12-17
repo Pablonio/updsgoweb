@@ -1,22 +1,17 @@
 import React from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
 import firebaseApp from './firebase-config';
-import { useNavigate } from 'react-router-dom';
 
-const MicrosoftLoginButton = () => {
+const MicrosoftLoginButton = ({ setUser }) => {
   const auth = getAuth(firebaseApp);
   const provider = new OAuthProvider('microsoft.com');
-  const navigate = useNavigate();
 
   const handleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log(result);
-      
-      // Redirige a la página de perfil después del inicio de sesión
-      navigate('/perfil');
+      setUser(result.user); // Almacena la información del usuario en el estado
     } catch (error) {
-      console.error('Error al iniciar sesión con Microsoft', error);
+      window.alert('Error al iniciar sesión con Microsoft', error);
     }
   };
 
