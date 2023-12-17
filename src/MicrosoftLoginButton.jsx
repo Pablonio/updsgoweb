@@ -9,6 +9,7 @@ const MicrosoftLoginButton = () => {
   const provider = new OAuthProvider('microsoft.com');
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+  const [redirectResult, setRedirectResult] = useState(null);
   const [isMounted, setIsMounted] = useState(true);
 
   useEffect(() => {
@@ -20,10 +21,9 @@ const MicrosoftLoginButton = () => {
 
   const handleSignIn = async () => {
     try {
+      if (!isMounted) return; // Check if component is still mounted
       const result = await signInWithPopup(auth, provider);
-      if (isMounted) {
-        navigate('/perfil', { state: result });
-      }
+      setRedirectResult(result); // Store result in state
     } catch (error) {
       console.error('Error al iniciar sesión con Microsoft', error);
       if (isMounted) {
@@ -31,6 +31,12 @@ const MicrosoftLoginButton = () => {
       }
     }
   };
+
+  useEffect(() => {
+    if (redirectResult) {
+      navigate('/perfil', { state: redirectResult }); // Redirect after state update
+    }
+  }, [redirectResult, navigate]);
 
   return (
     <div>
