@@ -1,32 +1,45 @@
 // src/MicrosoftLoginButton.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom'; // Cambia useHistory por useNavigate
 import firebaseApp from './firebase-config';
+import { useNavigate } from 'react-router-dom';
 
 const MicrosoftLoginButton = () => {
   const auth = getAuth(firebaseApp);
   const provider = new OAuthProvider('microsoft.com');
-  const navigate = useNavigate(); // Cambia history por navigate
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [isMounted, setIsMounted] = useState(true);
+
+  useEffect(() => {
+    return () => {
+      // Cleanup function to set isMounted to false when component unmounts
+      setIsMounted(false);
+    };
+  }, []);
 
   const handleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log(result);
-
-      // Redirige a la página deseada después del inicio de sesión
-      navigate('/perfil'); // Reemplaza '/perfil' con la ruta de tu página deseada
+      if (isMounted) {
+        navigate('/perfil', { state: result });
+      }
     } catch (error) {
       console.error('Error al iniciar sesión con Microsoft', error);
+      if (isMounted) {
+        setErrorMessage('Algo salió mal. Por favor, inténtalo de nuevo.');
+      }
     }
   };
 
   return (
-    <button onClick={handleSignIn}>
-      Bienvenido
-    </button>
+    <div>
+      <button onClick={handleSignIn}>
+        Bienvenido
+      </button>
+      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+    </div>
   );
 };
 
 export default MicrosoftLoginButton;
-
