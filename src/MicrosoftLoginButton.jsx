@@ -1,7 +1,7 @@
 // src/MicrosoftLoginButton.js
 import React from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
-import { useHistory } from 'react-router-dom';  // Importa useHistory
+import { useHistory } from 'react-dom';  // Importa useHistory
 import firebaseApp from './firebase-config';
 
 const MicrosoftLoginButton = () => {
