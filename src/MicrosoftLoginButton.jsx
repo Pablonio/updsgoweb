@@ -1,13 +1,13 @@
 // src/MicrosoftLoginButton.js
 import React from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
-import { useHistory } from 'react-dom';  // Importa useHistory
+import { useNavigate } from 'react-router-dom'; // Cambia useHistory por useNavigate
 import firebaseApp from './firebase-config';
 
 const MicrosoftLoginButton = () => {
   const auth = getAuth(firebaseApp);
   const provider = new OAuthProvider('microsoft.com');
-  const history = useHistory();  // Obtiene el objeto de historial
+  const navigate = useNavigate(); // Cambia history por navigate
 
   const handleSignIn = async () => {
     try {
@@ -15,7 +15,7 @@ const MicrosoftLoginButton = () => {
       console.log(result);
 
       // Redirige a la página deseada después del inicio de sesión
-      history.push('/perfil');  // Reemplaza '/perfil' con la ruta de tu página deseada
+      navigate('/perfil'); // Reemplaza '/perfil' con la ruta de tu página deseada
     } catch (error) {
       console.error('Error al iniciar sesión con Microsoft', error);
     }
@@ -29,3 +29,4 @@ const MicrosoftLoginButton = () => {
 };
 
 export default MicrosoftLoginButton;
+
