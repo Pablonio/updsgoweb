@@ -1,3 +1,38 @@
 .responsive-bg-verde {
-    width: 390px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    width: 355px;    
+}
+
+@media (max-width: 800px),(max-height: 800px){
+    .responsive-bg-verde{
+        width: 305px;
+    }
+}
+@media (max-width: 700px),(max-height: 700px){
+    .responsive-bg-verde{
+        width: 255px;
+    }
+}
+
+@media (max-width: 600px),(max-height: 600px){
+    .responsive-bg-verde{
+        width: 205px;
+    }
+}
+
+@media (max-width: 500px),(max-height: 500px){
+    .responsive-bg-verde{
+        width: 155px;
+    }
+}
+
+@media (max-width: 400px),(max-height: 400px){
+    .responsive-bg-verde{
+        width: 105px;
+    }
+}
+
+@media (max-width: 300px),(max-height: 300px){
+    .responsive-bg-verde{
+        width: 55px;
+    }
 }
