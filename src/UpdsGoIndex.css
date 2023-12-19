@@ -2,6 +2,7 @@
 
 body {
   overflow: hidden; /* Evita que se haga scroll en el cuerpo de la página */
+  margin: 0; /* Elimina el margen por defecto del cuerpo */
 }
 
 .UpdsGoIndex {
