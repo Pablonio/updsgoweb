@@ -1,24 +1,19 @@
 /* Estilos generales */
 .container-de-ambos {
     display: flex;
-    flex-direction: column; /* Coloca los elementos uno encima del otro */
-    align-items: center; /* Alinea los elementos al centro horizontalmente */
-  }
-  
-  .logo-container {
-    margin-bottom: 100px; /* Ajusta la separación entre el logo y el botón */
+    flex-direction: column;
   }
   
   /* Nuevos estilos para los contenedores izquierdo y derecho */
   .parte-izq-container {
-    position: relative;
-    left: -625px;
-    top: 1000px;
+    position: absolute;
+    left: 2%;
+    top: 55%; /* Ajusta la posición vertical según tus preferencias */
   }
   
   .parte-der-container {
-    position: relative;
-    right: -625px;
-    top: -1000px;
+    position: absolute;
+    right: 0;
+    top: 15%; /* Ajusta la posición vertical según tus preferencias */
   }
   
