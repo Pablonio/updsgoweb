@@ -1,6 +1,9 @@
+// MicrosoftLoginButton.jsx
 import React from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
-import firebaseApp from './firebase-config';
+import firebaseApp from '../firebase-config';
+import ComponenteMicrosoftImg from './Componentes/ComponenteMicrosoftImg';
+import './MicrosoftLoginButton.css';
 
 const MicrosoftLoginButton = ({ setUser }) => {
   const auth = getAuth(firebaseApp);
@@ -9,15 +12,16 @@ const MicrosoftLoginButton = ({ setUser }) => {
   const handleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      setUser(result.user); // Almacena la información del usuario en el estado
+      setUser(result.user);
     } catch (error) {
       window.alert('Error al iniciar sesión con Microsoft', error);
     }
   };
 
   return (
-    <button onClick={handleSignIn}>
-      Bienvenido
+    <button className="login-container" onClick={handleSignIn}>
+      <ComponenteMicrosoftImg />
+      <span className="microsoft-login-text">Inicia Sesión</span>
     </button>
   );
 };

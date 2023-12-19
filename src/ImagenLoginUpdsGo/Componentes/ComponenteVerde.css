@@ -1,0 +1,70 @@
+/* ComponenteAzul.css */
+.responsive-image-verde {
+    width: 70px;
+    height: 65px;
+    max-width: 70px; /* Esto permite que la imagen sea completamente flexible en anchura */
+    max-height: 65px;
+
+    @media (max-width: 800px) {
+        width: 60px;
+        height: 55px;
+    }
+
+    @media (max-width: 700px) {
+        width: 50px;
+        height: 45px;
+    }
+
+    @media (max-width: 600px) {
+        width: 40px;
+        height: 35px;
+    }
+
+    @media (max-width: 500px) {
+        width: 30px;
+        height: 25px;
+    }
+
+    @media (max-width: 400px) {
+        width: 20px;
+        height: 15px;
+    }
+
+    @media (max-width: 300px) {
+        width: 10px;
+        height: 5px;
+    }
+
+    @media (max-height: 800px) {
+        width: 60px;
+        height: 55px;
+    }
+    
+    @media (max-height: 700px) {
+        
+        width: 50px;
+        height: 45px;
+    }
+    @media (max-height: 600px) {
+        
+        width: 40px;
+        height: 35px;
+    }
+    @media (max-height: 500px) {
+        
+        width: 30px;
+        height: 25px;
+    }
+    @media (max-height: 400px) {
+        
+        width: 20px;
+        height: 15px;
+    }
+    @media (max-height: 300px) {
+        
+        width: 10px;
+        height: 5px;
+    }
+}
+
+  

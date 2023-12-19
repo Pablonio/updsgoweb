@@ -1,0 +1,29 @@
+/* MicrosoftLoginButton.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000; /* Grosor del borde reducido a 1px */
+  border-radius: 10px; /* Ajusta el radio del borde para que sea más pequeño */
+  padding: 0.5% 12px; /* Ajusta el padding para hacer el botón más estrecho */
+  background-color: transparent;
+  position: relative;
+}
+
+.login-container:hover {
+  border-color: #000;
+}
+
+.login-container:active {
+  border-color: #000;
+}
+
+.login-container:active::before {
+  box-shadow: none;
+}
+
+.microsoft-login-button img {
+  width: 30px;
+}
+

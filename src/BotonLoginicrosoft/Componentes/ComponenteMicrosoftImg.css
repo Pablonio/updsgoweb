@@ -1,0 +1,13 @@
+/* ComponenteMicrosoftImg.css */
+
+.microsoft-logo {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .microsoft-logo:hover {
+    transform: rotate(90deg);
+  }
+  

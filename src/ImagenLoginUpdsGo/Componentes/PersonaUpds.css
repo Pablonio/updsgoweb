@@ -1,0 +1,44 @@
+.responsive-persona-upds {
+    width: 150px;
+    height: 200px;
+    max-width: 150px; /* Esto permite que la imagen sea completamente flexible en anchura */
+    max-height: 200px;
+
+    @media (max-width: 800px) {
+        width: 125px;
+        height: 175px;
+    }
+
+    @media (max-width: 700px) {
+        width: 125px;
+        height: 150px;
+    }
+
+    @media (max-width: 600px) {
+        width: 75px;
+        height: 125px;
+    }
+    @media (max-width: 500px) {
+        width: 50px;
+        height: 100px;
+    }
+
+    @media (max-height: 800px) {
+        width: 125px;
+        height: 175px;
+    }
+
+    @media (max-height: 700px) {
+        width: 125px;
+        height: 150px;
+    }
+
+    @media (max-height: 600px) {
+        width: 75px;
+        height: 125px;
+    }
+    @media (max-height: 500px) {
+        width: 50px;
+        height: 100px;
+    }
+}
