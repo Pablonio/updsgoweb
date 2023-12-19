@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './UpdsGoIndex.css';
-import BotonLoginMicrosoft from './ImagenLoginUpdsGo/BotonLogoToIndex';
+import BotonLogoMicrosoft from './ElementosIndex/UnionElmentos/BotonLogoToIndex';
 import PerfilPage from './perfil';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -26,7 +26,7 @@ function UpdsGoIndex() {
       <div className="UpdsGoIndex">
         <header className="App-header">
           {/* Condición para renderizar el componente BotonLoginMicrosoft */}
-          {!user && <BotonLoginMicrosoft />}
+          {!user && <BotonLogoMicrosoft />}
           {loading ? (
             <p>Cargando...</p>
           ) : user ? (

@@ -1,5 +1,9 @@
 /* UpdsGoIndex.css */
 
+body {
+  overflow: hidden; /* Evita que se haga scroll en el cuerpo de la página */
+}
+
 .UpdsGoIndex {
   text-align: center;
   min-height: 100vh;
@@ -9,6 +13,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow: hidden; /* Evita que se haga scroll en el contenedor principal */
 }
 
 .LogoUpds-container {
@@ -18,3 +23,5 @@
 .MicrosoftLoginButton-container {
   margin-bottom: 15px; /* Ajustado para separar del contenido siguiente */
 }
+
+/* Recuerda ajustar o quitar estas reglas según tus necesidades cuando desees desbloquear la pantalla */

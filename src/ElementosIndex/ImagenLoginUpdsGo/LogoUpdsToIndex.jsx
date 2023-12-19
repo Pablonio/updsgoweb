@@ -1,9 +1,9 @@
 // LogoUpds.jsx
 import React from 'react';
-import ComponenteAzul from './ComponenteAzul';
-import ComponenteVerde from './ComponenteVerde';
-import ComponenteRojo from './ComponenteRojo';
-import PersonaUpds from './PersonaUpds';
+import ComponenteAzul from './Componentes/ComponenteAzul';
+import ComponenteVerde from './Componentes/ComponenteVerde';
+import ComponenteRojo from './Componentes/ComponenteRojo';
+import PersonaUpds from './Componentes/PersonaUpds';
 import './LogoUpdsToIndex.css';
 
 const LogoUpds = () => {
