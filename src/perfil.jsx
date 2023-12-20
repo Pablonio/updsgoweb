@@ -146,7 +146,7 @@ function PerfilPage({ user }) {
       {/* ... (other JSX code) */}
       <div className="PerfilPage">
         <main ref={chatWindow}>
-          {globalMessages.map((msg) => (
+          {globalMessages.slice().reverse().map((msg) => (
             <ProfileMessage
               key={msg.id}
               message={msg}

@@ -14,7 +14,6 @@ const MicrosoftLoginButton = ({ setUser }) => {
       const result = await signInWithPopup(auth, provider);
       setUser(result.user);
     } catch (error) {
-      window.alert('Error al iniciar sesión con Microsoft', error);
     }
   };
 
