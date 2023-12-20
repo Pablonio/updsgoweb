@@ -7,26 +7,26 @@ import './perfil.css'; // Asegúrate de importar tu hoja de estilos
 
 function PerfilPage({ user }) {
   const dummy = useRef();
-  const perfilMessagesRef = collection(firestore, 'perfilMessages', user.uid, 'messages');
-  const perfilMessagesQuery = firestoreQuery(perfilMessagesRef, orderBy('createdAt', 'desc'));
+  const globalMessagesRef = collection(firestore, 'globalMessages');
+  const globalMessagesQuery = firestoreQuery(globalMessagesRef, orderBy('createdAt', 'desc'));
 
-  const [perfilMessages, setPerfilMessages] = useState([]);
+  const [globalMessages, setGlobalMessages] = useState([]);
   const [formValue, setFormValue] = useState('');
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(perfilMessagesQuery, (snapshot) => {
+    const unsubscribe = onSnapshot(globalMessagesQuery, (snapshot) => {
       const messageList = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      setPerfilMessages(messageList);
+      setGlobalMessages(messageList);
       dummy.current.scrollIntoView({ behavior: 'smooth' });
     });
 
     return () => unsubscribe();
-  }, [perfilMessagesQuery]);
+  }, [globalMessagesQuery]);
 
-  const sendPerfilMessage = async (e) => {
+  const sendGlobalMessage = async (e) => {
     e.preventDefault();
 
-    await addDoc(perfilMessagesRef, {
+    await addDoc(globalMessagesRef, {
       text: formValue,
       createdAt: new Date(),
       user: user.displayName,
@@ -36,7 +36,7 @@ function PerfilPage({ user }) {
   };
 
   return (
-    <div className="PerfilPage"> {/* Agrega una clase para aplicar estilos al componente completo */}
+    <div className="PerfilPage">
       <h1>Página de Perfil</h1>
       {user && (
         <div>
@@ -44,13 +44,13 @@ function PerfilPage({ user }) {
           <p>Correo electrónico: {user.email}</p>
 
           <main>
-            {perfilMessages.map((msg) => (
+            {globalMessages.map((msg) => (
               <ProfileMessage key={msg.id} message={msg} />
             ))}
             <span ref={dummy}></span>
           </main>
 
-          <form onSubmit={sendPerfilMessage}>
+          <form onSubmit={sendGlobalMessage}>
             <input
               value={formValue}
               onChange={(e) => setFormValue(e.target.value)}
@@ -81,3 +81,4 @@ function ProfileMessage({ message }) {
 }
 
 export default PerfilPage;
+
