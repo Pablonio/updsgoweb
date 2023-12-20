@@ -16,7 +16,7 @@ function PerfilPage({ user }) {
   useEffect(() => {
     const unsubscribe = onSnapshot(globalMessagesQuery, (snapshot) => {
       const messageList = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      setGlobalMessages(messageList);
+      setGlobalMessages(messageList.reverse()); // Invertir el orden de los mensajes
       dummy.current.scrollIntoView({ behavior: 'smooth' });
     });
 
@@ -46,7 +46,7 @@ function PerfilPage({ user }) {
           <main>
             {globalMessages.map((msg) => (
               <ProfileMessage key={msg.id} message={msg} />
-            ))}
+            )).reverse()} {/* Invertir el orden de renderizado */}
             <span ref={dummy}></span>
           </main>
 
@@ -81,4 +81,3 @@ function ProfileMessage({ message }) {
 }
 
 export default PerfilPage;
-

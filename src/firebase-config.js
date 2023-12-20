@@ -3,12 +3,13 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDVVi_hH2v3jYPk_WMNI-43S9Ab9QiDiX8",
-  authDomain: "updsgoweb-c8d42.firebaseapp.com",
-  projectId: "updsgoweb-c8d42",
-  storageBucket: "updsgoweb-c8d42.appspot.com",
-  messagingSenderId: "731180091466",
-  appId: "1:731180091466:web:9d92271ad571904716beb3"
+    apiKey: "AIzaSyDFcNBiqJAeLY2CcV1cQtpjEdhEyVBFcQ4",
+    authDomain: "updsgo-46173.firebaseapp.com",
+    projectId: "updsgo-46173",
+    storageBucket: "updsgo-46173.appspot.com",
+    messagingSenderId: "1041037303806",
+    appId: "1:1041037303806:web:e79e3107871e4dce92eaaf",
+    measurementId: "G-43TY5W5731"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
