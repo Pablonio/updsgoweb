@@ -9,6 +9,9 @@ import './LogoUpdsToIndex.css';
 const LogoUpds = () => {
   return (
     <div className='logo-container'>
+      <div className='izquierda'>
+        <ComponenteRojo />
+      </div>
       <div className='en-medio-izquierda-centro'>
         <div className='separacionAzulA'>
           <ComponenteAzul />
@@ -38,6 +41,9 @@ const LogoUpds = () => {
         <div className='separacionAzulB'>
           <ComponenteAzul />
         </div>
+      </div>
+      <div className='derecha'>
+        <ComponenteRojo />
       </div>
     </div>
   );
