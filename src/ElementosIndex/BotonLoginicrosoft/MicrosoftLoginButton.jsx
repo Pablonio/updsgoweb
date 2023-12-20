@@ -1,7 +1,7 @@
 // MicrosoftLoginButton.jsx
 import React from 'react';
 import { getAuth, signInWithPopup, OAuthProvider } from 'firebase/auth';
-import firebaseApp from '../../firebase-config';
+import { firebaseApp } from '../../firebase-config';
 import ComponenteMicrosoftImg from './Componentes/ComponenteMicrosoftImg';
 import './MicrosoftLoginButton.css';
 

@@ -12,12 +12,8 @@
 /* Nuevos estilos para los contenedores izquierdo y derecho */
 .parte-izq-container {
   position: absolute;
-  left: 5%;
-  top: 23%; /* Ajusta la posición vertical según tus necesidades */
 }
 
 .parte-der-container {
   position: absolute;
-  right: 5%;
-  top: -23%; /* Ajusta la posición vertical según tus necesidades */
 }
