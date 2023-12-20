@@ -1,0 +1,100 @@
+.PerfilPageContainer {
+    position: relative;
+    color: black;
+    max-width: 400px;
+    margin: auto;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .PerfilInfo {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .PerfilInfo div {
+    margin-left: 10px;
+  }
+  
+  .EstadoConexion {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+  
+  .Conectado {
+    background-color: #4CAF50;
+  }
+  
+  main {
+    padding: 60px 10px 10px 10px;
+    max-height: 300px;
+    overflow-y: scroll; /* or overflow-y: visible; */
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  
+  
+  /* Estilos adicionales para dar apariencia de card de perfil */
+  .PerfilPageContainer h1 {
+    margin-bottom: 10px; /* Reducir el espacio inferior del título */
+  }
+  
+  .PerfilInfo {
+    background-color: #fff; /* Fondo blanco */
+    padding: 5px; /* Reducir el espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  main {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Ocultar contenido que sobresale */
+  }
+  
+  .Mensaje {
+    background-color: #e2f7cb; /* Color de fondo para mensajes */
+  }
+  
+  .MensajeUsuario {
+    background-color: #dcf8c6; /* Color de fondo para mensajes del usuario actual */
+  }
+  
+  .EnviarMensajeForm {
+    margin-top: 10px; /* Reducir el espacio superior del formulario */
+  }
+  
+  .enviarButton {
+    background-color: #25d366; /* Verde similar a WhatsApp */
+  }
+  
+  .EstadoConexion {
+    background-color: #25d366; /* Verde similar a WhatsApp */
+  }
+  
+  /* Media queries para hacerlo responsive */
+  @media only screen and (max-width: 600px) {
+    .PerfilPageContainer {
+      max-width: 100%; /* Hacer que se ajuste al ancho de la pantalla */
+      border-radius: 0; /* Quitar bordes redondeados */
+    }
+  
+    .PerfilInfo {
+      position: static;
+      margin-bottom: 10px;
+    }
+  
+    main {
+      padding-top: 10px; /* Ajuste para dejar espacio para el PerfilInfo en la parte superior */
+    }
+  }
+  
