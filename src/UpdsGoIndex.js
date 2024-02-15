@@ -25,21 +25,7 @@ function UpdsGoIndex() {
     <Router>
       <div className="UpdsGoIndex">
         <header className="App-header">
-          {/* Condición para renderizar el componente BotonLoginMicrosoft */}
-          {!user && <BotonLogoMicrosoft />}
-          {loading ? (
-            <p>Cargando...</p>
-          ) : user ? (
-            <div>
-              <Routes>
-                <Route path="/" element={<Navigate to="/perfil" />} />
-                <Route
-                  path="/perfil"
-                  element={<PerfilPage user={user} setUser={setUser} />}
-                />
-              </Routes>
-            </div>
-          ) : null}
+          En mantenimiento XD
         </header>
       </div>
     </Router>
